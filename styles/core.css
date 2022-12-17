@@ -31,18 +31,17 @@ body {
   margin: 3rem;
   animation: glide 600ms cubic-bezier(0.37, 0, 0.63, 1) 100ms 1 forwards;
   opacity: 0;
-  cursor: url("../media/cursor.svg"), auto;
 }
 
 h1 {
   color: var(--midnight);
   font-weight: inherit;
-  font-size: 20px;
+  font-size: inherit;
 }
 
 a {
   color: var(--slate);
-  cursor: url("../media/pointer.svg"), auto;
+  text-decoration: none;
 }
 
 a:hover {
@@ -63,28 +62,20 @@ a:hover {
   }
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+}
+
+li:not(:last-child)::after {
+  content: " ·";
+}
+
 address {
   font-style: normal;
-}
-
-.avatar {
-  margin: 2em 0;
-  height: 150px;
-  width: 150px;
-}
-
-@media screen and (max-width: 600px) {
-  .avatar {
-    height: 100px;
-    width: 100px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .avatar {
-    height: 125px;
-    width: 125px;
-  }
 }
 
 ::selection {
@@ -97,7 +88,6 @@ address {
     transform: translateY(12px);
     opacity: 0;
   }
-
   to {
     transform: translateY(0px);
     opacity: 1;
